@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/language-cards/static/css/main.a617e044.chunk.css",
+    "main.js": "/language-cards/static/js/main.43d1c871.chunk.js",
+    "main.js.map": "/language-cards/static/js/main.43d1c871.chunk.js.map",
+    "runtime-main.js": "/language-cards/static/js/runtime-main.bb7ab352.js",
+    "runtime-main.js.map": "/language-cards/static/js/runtime-main.bb7ab352.js.map",
+    "static/js/2.f4bd0b5b.chunk.js": "/language-cards/static/js/2.f4bd0b5b.chunk.js",
+    "static/js/2.f4bd0b5b.chunk.js.map": "/language-cards/static/js/2.f4bd0b5b.chunk.js.map",
+    "static/js/3.1320e701.chunk.js": "/language-cards/static/js/3.1320e701.chunk.js",
+    "static/js/3.1320e701.chunk.js.map": "/language-cards/static/js/3.1320e701.chunk.js.map",
+    "index.html": "/language-cards/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/language-cards/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.f4bd0b5b.chunk.js.LICENSE.txt": "/language-cards/static/js/2.f4bd0b5b.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/language-cards/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bb7ab352.js",
+    "static/js/2.f4bd0b5b.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.43d1c871.chunk.js"
+  ]
+}
