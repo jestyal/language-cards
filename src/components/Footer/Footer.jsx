@@ -1,9 +1,14 @@
 import "./Footer.scss";
+import Logo from "../Logo/Logo";
+import SocialBlock from "../SocialBlock/SocialBlock";
 
 function Footer() {
     return (
-        <footer className="footer">
-            Тут футер
+        <footer className="Footer">
+            <div className="wrapper Footer__wrap">
+                <Logo />
+                <SocialBlock />
+            </div>
         </footer>
     );
 }

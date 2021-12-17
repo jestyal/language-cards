@@ -1,3 +1,5 @@
-.footer {
+@use "../../assets/styles/variables";
 
+.Footer {
+  background-color: variables.$colorLightGrey;
 }
