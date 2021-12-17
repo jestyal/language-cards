@@ -22,8 +22,9 @@ function SocialBlock() {
     return (
         <div className="Social__wrap">
             {
-                SocialData.map((item) =>
-                    <SocialLink title={item.title}
+                SocialData.map((item, index) =>
+                    <SocialLink key={index}
+                                title={item.title}
                                 link={item.link}
                                 svg={item.svg}
                     />

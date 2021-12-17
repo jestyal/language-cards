@@ -21,8 +21,9 @@ function Header() {
                 <SearchForm />
                 <div className="Nav__wrap">
                     {
-                        navData.map((item) =>
-                            <NavLink title={item.title}
+                        navData.map((item, index) =>
+                            <NavLink key={index}
+                                     title={item.title}
                                      link={item.link}
                             />
                         )

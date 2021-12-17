@@ -3,8 +3,12 @@ import "./Word.scss";
 import EditButton from "./EditButton/EditButton";
 
 class Word extends Component {
+    editWord() {
+        console.log(1111111);
+    }
+
     render() {
-        const { english, transcription, russian, tags } = this.props;
+        const { english, transcription, russian } = this.props;
 
         return (
             <div className="Word__item">
@@ -23,8 +27,8 @@ class Word extends Component {
                     </div>
                 </div>
                 <div className="Word__edit">
-                    <EditButton title={"Save"} svg={"save"}/>
-                    <EditButton title={"Edit"} svg={"edit"} />
+                    {/*<EditButton title={"Save"} svg={"save"}/>*/}
+                    <EditButton title={"Edit"} svg={"edit"} onClick={this.editWord}/>
                     <EditButton title={"Delete"} svg={"delete"} />
                 </div>
             </div>

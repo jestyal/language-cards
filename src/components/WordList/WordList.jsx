@@ -10,7 +10,8 @@ function WordList() {
             <h2 className="title">Word list</h2>
             {
                 WORDS.map((item) =>
-                    <Word english={item.english}
+                    <Word key={item.id}
+                          english={item.english}
                           transcription={item.transcription}
                           russian={item.russian}
                           tags={item.tags}
