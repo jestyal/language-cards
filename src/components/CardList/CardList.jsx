@@ -1,4 +1,5 @@
 import Card from "../Card/Card";
+import "./CardList.scss";
 
 function CardList() {
     return (

@@ -1,3 +1,5 @@
+import "./404.scss";
+
 function PageNotFound() {
     return (
         <section className="wrapper">

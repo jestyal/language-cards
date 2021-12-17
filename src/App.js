@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import CardList from "./components/CardList/CardList";

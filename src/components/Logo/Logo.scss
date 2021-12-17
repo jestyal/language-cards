@@ -1,0 +1,20 @@
+.Logo {
+  display: flex;
+  align-items: center;
+
+}
+
+.Logo__img {
+  width: 100px;
+  height: 85px;
+  margin-right: 20px;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.Logo__desc {
+  font-size: 20px;
+}
