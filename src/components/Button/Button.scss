@@ -1,0 +1,20 @@
+@use "../../assets/styles/variables";
+
+.Btn {
+  display: block;
+  width: fit-content;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: variables.$borderRadius;
+  background-color: variables.$colorNeonBlue;
+  color: variables.$colorWhite;
+  font-size: 18px;
+  cursor: pointer;
+  &:hover {
+    background-color: variables.$colorGreen;
+    opacity: initial;
+  }
+  &:focus {
+    outline: none;
+  }
+}

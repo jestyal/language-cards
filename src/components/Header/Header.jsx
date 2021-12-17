@@ -1,7 +1,17 @@
 import "./Header.scss";
 import Logo from "../Logo/Logo";
-import Nav from "../Nav/Nav";
 import SearchForm from "../SearchForm/SearchForm";
+import NavLink from "../NavLink/NavLink";
+
+
+const navData = [{
+    title: "Log In",
+    link: "",
+},{
+    title: "Sign Up",
+    link: "",
+},];
+
 
 function Header() {
     return (
@@ -9,7 +19,15 @@ function Header() {
             <div className="wrapper Header__wrap">
                 <Logo isShow />
                 <SearchForm />
-                <Nav />
+                <div className="Nav__wrap">
+                    {
+                        navData.map((item) =>
+                            <NavLink title={item.title}
+                                     link={item.link}
+                            />
+                        )
+                    }
+                </div>
             </div>
         </header>
     );

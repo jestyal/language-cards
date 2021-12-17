@@ -1,0 +1,8 @@
+.Nav__wrap {
+
+}
+.Nav__link {
+  &:not(:last-of-type){
+    margin-right: 20px;
+  }
+}

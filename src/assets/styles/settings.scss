@@ -43,21 +43,6 @@ a {
   }
 }
 
-.btn {
-  display: block;
-  max-width: 140px;
-  width: 100%;
-  padding: 5px 10px;
-  border: 0;
-  border-radius: variables.$borderRadius;
-  background-color: variables.$colorNavy;
-  font-size: 14px;
-  cursor: pointer;
-  &:hover {
-    background-color: variables.$colorPink;
-    opacity: 0.8;
-  }
-  &:focus {
-    outline: none;
-  }
+.mb_10 {
+  margin-bottom: 10px;
 }
