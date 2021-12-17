@@ -1,5 +1,11 @@
 @use "../../assets/styles/variables";
 
 .Footer {
+  padding: 5px 0;
   background-color: variables.$colorLightGrey;
+}
+.Footer__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

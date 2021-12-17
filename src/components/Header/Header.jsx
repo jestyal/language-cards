@@ -5,7 +5,7 @@ function Header() {
     return (
         <header className="Header">
             <div className="wrapper">
-                <Logo />
+                <Logo isShow />
             </div>
         </header>
     );

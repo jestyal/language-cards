@@ -1,0 +1,10 @@
+@use "../../assets/styles/variables";
+
+.Copyright {
+  max-width: 180px;
+  font-size: 13px;
+  color: variables.$colorGrey;
+  a {
+    color: variables.$colorGrey;
+  }
+}
