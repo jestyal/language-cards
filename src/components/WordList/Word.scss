@@ -18,8 +18,17 @@
   align-items: center;
 }
 .Word__input-wrap {
+  position: relative;
+  margin-right: 20px;
   input {
     display: none;
+    position: absolute;
+    left: 0;
+    top: -5px;
+    z-index: 2;
+    padding: 5px;
+    border: 1px solid variables.$colorLightGrey;
+    background-color: variables.$colorWhite;
   }
   span {
     display: block;

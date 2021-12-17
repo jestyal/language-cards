@@ -9,7 +9,7 @@ function App() {
     <div className="App">
         <Header />
         <div className="wrapper">
-            <CardList />
+            {/*<CardList />*/}
             <WordList />
         </div>
         <Footer />
