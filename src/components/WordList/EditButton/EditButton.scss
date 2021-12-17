@@ -1,0 +1,16 @@
+@use "../../../assets/styles/variables";
+
+.Btn_edit {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+  font-size: 14px;
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    path {
+      fill: variables.$colorBlack !important;
+    }
+  }
+}
