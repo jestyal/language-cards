@@ -4,14 +4,9 @@ import { ReactComponent as DeleteIcon } from './icons/delete-icon.svg';
 import { ReactComponent as EditIcon } from './icons/edit-icon.svg';
 import { ReactComponent as SaveIcon } from './icons/save-icon.svg';
 
-// const ICONS = {
-//     delete: <DeleteIcon />,
-//     edit: <EditIcon />,
-//     save: <SaveIcon />,
-// }
 class EditButton extends Component {
     render() {
-        const {title, svg, onClick} = this.props
+        const {id, title, svg, onClick, isShow} = this.props
 
         let buttonDesc;
         if(svg === "delete") {
@@ -24,7 +19,7 @@ class EditButton extends Component {
             buttonDesc = ""
         }
         return (
-            <button type="submit" className="Btn Btn_edit" onClick={onClick}>
+            <button id={id} type="submit" className="Btn Btn_edit" onClick={onClick} style={isShow && {"display": "none"}}>
                 {title}
                 {buttonDesc}
             </button>
