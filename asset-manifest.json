@@ -1,22 +1,28 @@
 {
   "files": {
-    "main.css": "/language-cards/static/css/main.a617e044.chunk.css",
-    "main.js": "/language-cards/static/js/main.cef09c88.chunk.js",
-    "main.js.map": "/language-cards/static/js/main.cef09c88.chunk.js.map",
-    "runtime-main.js": "/language-cards/static/js/runtime-main.bb7ab352.js",
-    "runtime-main.js.map": "/language-cards/static/js/runtime-main.bb7ab352.js.map",
-    "static/js/2.f4bd0b5b.chunk.js": "/language-cards/static/js/2.f4bd0b5b.chunk.js",
-    "static/js/2.f4bd0b5b.chunk.js.map": "/language-cards/static/js/2.f4bd0b5b.chunk.js.map",
-    "static/js/3.1320e701.chunk.js": "/language-cards/static/js/3.1320e701.chunk.js",
-    "static/js/3.1320e701.chunk.js.map": "/language-cards/static/js/3.1320e701.chunk.js.map",
+    "main.css": "/language-cards/static/css/main.b8fdcf06.chunk.css",
+    "main.js": "/language-cards/static/js/main.1ba2dd56.chunk.js",
+    "main.js.map": "/language-cards/static/js/main.1ba2dd56.chunk.js.map",
+    "runtime-main.js": "/language-cards/static/js/runtime-main.4f7c1d18.js",
+    "runtime-main.js.map": "/language-cards/static/js/runtime-main.4f7c1d18.js.map",
+    "static/js/2.51e8ff46.chunk.js": "/language-cards/static/js/2.51e8ff46.chunk.js",
+    "static/js/2.51e8ff46.chunk.js.map": "/language-cards/static/js/2.51e8ff46.chunk.js.map",
     "index.html": "/language-cards/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/language-cards/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.f4bd0b5b.chunk.js.LICENSE.txt": "/language-cards/static/js/2.f4bd0b5b.chunk.js.LICENSE.txt"
+    "static/css/main.b8fdcf06.chunk.css.map": "/language-cards/static/css/main.b8fdcf06.chunk.css.map",
+    "static/js/2.51e8ff46.chunk.js.LICENSE.txt": "/language-cards/static/js/2.51e8ff46.chunk.js.LICENSE.txt",
+    "static/media/delete-icon.e695c531.svg": "/language-cards/static/media/delete-icon.e695c531.svg",
+    "static/media/edit-icon.885a9169.svg": "/language-cards/static/media/edit-icon.885a9169.svg",
+    "static/media/github.754b74e3.svg": "/language-cards/static/media/github.754b74e3.svg",
+    "static/media/instagram.ed7edf7a.svg": "/language-cards/static/media/instagram.ed7edf7a.svg",
+    "static/media/logo.94dd117e.svg": "/language-cards/static/media/logo.94dd117e.svg",
+    "static/media/save-icon.58a544fe.svg": "/language-cards/static/media/save-icon.58a544fe.svg",
+    "static/media/search-icon.a471b1ff.svg": "/language-cards/static/media/search-icon.a471b1ff.svg",
+    "static/media/telegram.97187beb.svg": "/language-cards/static/media/telegram.97187beb.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.bb7ab352.js",
-    "static/js/2.f4bd0b5b.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.cef09c88.chunk.js"
+    "static/js/runtime-main.4f7c1d18.js",
+    "static/js/2.51e8ff46.chunk.js",
+    "static/css/main.b8fdcf06.chunk.css",
+    "static/js/main.1ba2dd56.chunk.js"
   ]
 }
