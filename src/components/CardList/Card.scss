@@ -1,0 +1,48 @@
+@use "../../assets/styles/variables";
+
+.card__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px 20px;
+  margin-bottom: 60px;
+}
+
+.card__item {
+  display: grid;
+  height: 280px;
+  align-items: end;
+  padding: 40px 20px;
+  border-radius: variables.$borderRadiusCard;
+  background-color: variables.$colorLightGrey;
+  text-align: center;
+  z-index: 5;
+}
+
+.card__word {
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.card__transcription {
+  color: variables.$colorDarkGrey;
+}
+.card__btn-wrap {
+  position: relative;
+  .Btn {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 3;
+    &.js_hidden {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+}
+.card__translation {
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: calc(50% - 20px);
+  z-index: 0;
+}

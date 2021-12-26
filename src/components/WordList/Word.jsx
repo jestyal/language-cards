@@ -36,9 +36,10 @@ class Word extends Component {
                     </div>
                 </div>
                 <div className="Word__edit">
-                    <EditButton id={`save` + english} title={"Save"} svg={"save"} isShow />
-                    <EditButton id={`edit` + english} title={"Edit"} svg={"edit"} onClick={() => this.editWord(this, english)}/>
-                    <EditButton id={`delete` + english} title={"Delete"} svg={"delete"} />
+                    <EditButton id={`save` + english} title="Save" svg="save" isShow />
+                    <EditButton id={`edit` + english} title="Edit" svg="edit" onClick={() => this.editWord(this, english)}/>
+                    {/*<EditButton id={`edit` + english} title="Edit" svg="edit" onClick={() => this.editWord(english)}/>*/}
+                    <EditButton id={`delete` + english} title="Delete" svg="delete" />
                 </div>
             </div>
         );

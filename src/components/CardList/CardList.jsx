@@ -1,14 +1,24 @@
+import { Fragment } from "react";
 import Card from "./Card/Card";
 import "./Card.scss";
+import WORDS from "../Dictionary/Dictionary";
 
 function CardList() {
     return (
-        <div className="card__list">
-            <h1>Карточки</h1>
-            <Card />
-            <Card />
-            <Card />
-        </div>
+        <Fragment>
+            <h2 className="title">Card list</h2>
+            <div className="card__list">
+                {
+                    WORDS.map((item) =>
+                        <Card key={item.id}
+                              english={item.english}
+                              transcription={item.transcription}
+                              russian={item.russian}
+                        />
+                    )
+                }
+            </div>
+        </Fragment>
     );
 }
 
