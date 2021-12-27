@@ -5,21 +5,21 @@
 }
 .Word__list-head {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 250px;
+  grid-template-columns: 1fr 1fr 1fr 200px;
   padding: 10px;
   background-color: variables.$colorLightGrey;
   font-weight: bold;
   div {
     &:last-of-type {
-      text-align: center;
+      text-align: end;
     }
   }
 }
 .Word__item {
   display: grid;
-  grid-template-columns: 1fr 250px;
+  grid-template-columns: 1fr 200px;
   padding: 10px;
-  &:nth-of-type(odd){
+  &:nth-of-type(even){
     background-color: variables.$colorLightGrey;
   }
 }
@@ -33,10 +33,10 @@
   position: relative;
   margin-right: 20px;
   input {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: -5px;
+    //display: block;
+    //position: absolute;
+    //left: 0;
+    //top: -5px;
     z-index: 2;
     padding: 5px;
     border: 1px solid variables.$colorLightGrey;
@@ -49,6 +49,9 @@
 
 
 .Word__edit {
+
+}
+.Word__edit-items {
   display: flex;
   align-items: center;
   justify-content: flex-end;

@@ -14,16 +14,13 @@ function WordList() {
                     <div>Russian</div>
                     <div>Edit Buttons</div>
                 </div>
-                {
-                    WORDS.map((item) =>
-                        <Word key={item.id}
-                              english={item.english}
-                              transcription={item.transcription}
-                              russian={item.russian}
-                              tags={item.tags}
-                        />
-                    )
-                }
+                <div className="Word__list-body">
+                    {
+                        WORDS.map((item) =>
+                            <Word key={item.id} {...item} />
+                        )
+                    }
+                </div>
             </div>
         </Fragment>
     );

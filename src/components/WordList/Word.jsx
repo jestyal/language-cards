@@ -1,49 +1,56 @@
-import { Component } from "react";
+import { useState } from "react";
 import "./Word.scss";
 import EditButton from "./EditButton/EditButton";
 
-class Word extends Component {
-    editWord(elem, elemId) {
-        let parent = document.querySelector(`#${elemId}`);
-        let child  = parent.querySelectorAll('.form__input');
 
-        for(let i=0; i<child.length; i++) {
-            child[i].style.display = "block";
-        }
+function Word({english, transcription, russian}) {
+    const [isEditMode, changeEditMode] = useState(false);
 
-        let saveBtn = parent.querySelector(`#save${elemId}`);
-        saveBtn.style.display = "flex";
-
+    function onClickChangeModeBtn() {
+        isEditMode ? changeEditMode(false) : changeEditMode(true);
     }
 
-    render() {
-        const { english, transcription, russian } = this.props;
-
-        return (
-            <div className="Word__item" id={english}>
-                <div className="Word__wrap">
-                    <div className="Word__input-wrap">
-                        <input type="text" className="form__input"/>
+    return (
+        <div className="Word__item">
+            <div className="Word__wrap">
+                <div className="Word__input-wrap">
+                    {isEditMode ?
+                        <input defaultValue={english} type="text" className="form__input"/>
+                        :
                         <span>{english}</span>
-                    </div>
-                    <div className="Word__input-wrap">
-                        <input type="text" className="form__input"/>
-                        <span>{transcription}</span>
-                    </div>
-                    <div className="Word__input-wrap">
-                        <input type="text" className="form__input"/>
-                        <span>{russian}</span>
-                    </div>
+                    }
                 </div>
-                <div className="Word__edit">
-                    <EditButton id={`save` + english} title="Save" svg="save" isShow />
-                    <EditButton id={`edit` + english} title="Edit" svg="edit" onClick={() => this.editWord(this, english)}/>
-                    {/*<EditButton id={`edit` + english} title="Edit" svg="edit" onClick={() => this.editWord(english)}/>*/}
-                    <EditButton id={`delete` + english} title="Delete" svg="delete" />
+                <div className="Word__input-wrap">
+                    {isEditMode ?
+                        <input defaultValue={transcription} type="text" className="form__input"/>
+                        :
+                        <span>{transcription}</span>
+                    }
+                </div>
+                <div className="Word__input-wrap">
+                    {isEditMode ?
+                        <input defaultValue={russian} type="text" className="form__input"/>
+                        :
+                        <span>{russian}</span>
+                    }
                 </div>
             </div>
-        );
-    }
+            <div className="Word__edit">
+                {isEditMode ?
+                    <div className="Word__edit-items">
+                        <EditButton title="Save" svg="save"  />
+                        <EditButton title="Cancel" svg="cancel" onClick={onClickChangeModeBtn}/>
+                    </div>
+                    :
+                    <div className="Word__edit-items">
+                        <EditButton title="Edit" svg="edit" onClick={onClickChangeModeBtn}/>
+                        <EditButton title="Delete" svg="delete"/>
+                    </div>
+                }
+            </div>
+        </div>
+    );
+
 }
 
 export default Word;
