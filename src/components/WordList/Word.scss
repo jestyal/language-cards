@@ -3,6 +3,18 @@
 .Word__list {
   margin-bottom: 60px;
 }
+.Word__list-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 250px;
+  padding: 10px;
+  background-color: variables.$colorLightGrey;
+  font-weight: bold;
+  div {
+    &:last-of-type {
+      text-align: center;
+    }
+  }
+}
 .Word__item {
   display: grid;
   grid-template-columns: 1fr 250px;
