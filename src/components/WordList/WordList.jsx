@@ -2,7 +2,6 @@ import {Fragment} from "react";
 import Word from "./Word";
 import "./Word.scss";
 import WORDS from "../Dictionary/Dictionary";
-import EditButton from "./EditButton/EditButton";
 
 function WordList() {
     return (

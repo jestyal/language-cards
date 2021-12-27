@@ -10,11 +10,7 @@ function CardList() {
             <div className="card__list">
                 {
                     WORDS.map((item) =>
-                        <Card key={item.id}
-                              english={item.english}
-                              transcription={item.transcription}
-                              russian={item.russian}
-                        />
+                        <Card key={item.id} {...item} />
                     )
                 }
             </div>

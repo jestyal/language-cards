@@ -1,10 +1,10 @@
 import "./Button.scss";
 
-function Button({ title, link }) {
+function Button({ title, onClick, isHidden }) {
     return (
-        <a href={link} className="Btn">
+        <button className={`Btn ` + (isHidden ? 'js_hidden' : null)} onClick={onClick}>
             {title}
-        </a>
+        </button>
     );
 }
 
