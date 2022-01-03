@@ -7,7 +7,6 @@ function Word({english, transcription, russian}) {
 
     const handleChangeMode = () => {
         isEditMode ? changeEditMode(false) : changeEditMode(true);
-
     }
 
 
