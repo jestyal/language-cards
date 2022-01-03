@@ -11,29 +11,19 @@ function Word({english, transcription, russian}) {
     }
 
 
-    //редактируем слова
-    const [englishValue, setEnglishValue] = useState(english);
-    const [transcriptionValue, setTranscriptionValue] = useState(transcription);
-    const [russianValue, setRussianValue] = useState(russian);
+    const [newWord, setNewWord] = useState(
+        {
+            english: english,
+            transcription: transcription,
+            russian: russian
+        }
+    );
 
-    const handleChangeEnglishValue = (event) => {
-        setEnglishValue(event.target.value);
-    }
-    const handleChangeTranscriptionValue = (event) => {
-        setTranscriptionValue(event.target.value);
-    }
-    const handleChangeRussianValue = (event) => {
-        setRussianValue(event.target.value);
-    }
-
-    const handleSave = () => {
-
-    }
-    const handleCancel = () => {
-        isEditMode ? changeEditMode(false) : changeEditMode(true);
-        setEnglishValue(english);
-        setTranscriptionValue(transcription);
-        setRussianValue(russian);
+    const handleChange = (event) => {
+        setNewWord(newWord => ({
+            ...newWord,
+            [event.target.id]: event.target.value
+        }));
     }
 
     return (
@@ -41,23 +31,23 @@ function Word({english, transcription, russian}) {
             <div className="Word__wrap">
                 <div className="Word__input-wrap">
                     {isEditMode ?
-                        <input value={englishValue} onChange={handleChangeEnglishValue} type="text" className="form__input"/>
+                        <input value={newWord.english} onChange={handleChange} name="english" type="text" className="form__input"/>
                         :
-                        <span>{englishValue}</span>
+                        <span>{newWord.english}</span>
                     }
                 </div>
                 <div className="Word__input-wrap">
                     {isEditMode ?
-                        <input value={transcriptionValue} onChange={handleChangeTranscriptionValue} type="text" className="form__input"/>
+                        <input value={newWord.transcription} onChange={handleChange} name="transcription" type="text" className="form__input"/>
                         :
-                        <span>{transcriptionValue}</span>
+                        <span>{newWord.transcription}</span>
                     }
                 </div>
                 <div className="Word__input-wrap">
                     {isEditMode ?
-                        <input value={russianValue} onChange={handleChangeRussianValue} type="text" className="form__input"/>
+                        <input value={newWord.russian} onChange={handleChange} name="russian" type="text" className="form__input"/>
                         :
-                        <span>{russianValue}</span>
+                        <span>{newWord.russian}</span>
                     }
                 </div>
             </div>
@@ -65,7 +55,7 @@ function Word({english, transcription, russian}) {
                 {isEditMode ?
                     <div className="Word__edit-items">
                         <EditButton title="Save" svg="save" onClick={handleChangeMode}  />
-                        <EditButton title="Cancel" svg="cancel" onClick={handleCancel}/>
+                        <EditButton title="Cancel" svg="cancel" onClick={handleChangeMode}/>
                     </div>
                     :
                     <div className="Word__edit-items">
