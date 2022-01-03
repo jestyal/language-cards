@@ -2,48 +2,77 @@ import { useState } from "react";
 import "./Word.scss";
 import EditButton from "./EditButton/EditButton";
 
-
 function Word({english, transcription, russian}) {
     const [isEditMode, changeEditMode] = useState(false);
 
-    function onClickChangeModeBtn() {
+    const handleChangeMode = () => {
         isEditMode ? changeEditMode(false) : changeEditMode(true);
     }
 
+
+
+
+
+    const [englishValue, setEnglishValue] = useState(english);
+    const [transcriptionValue, setTranscriptionValue] = useState(transcription);
+    const [russianValue, setRussianValue] = useState(russian);
+
+    const handleChangeEnglishValue = (event) => {
+        setEnglishValue(event.target.value);
+    }
+    const handleChangeTranscriptionValue = (event) => {
+        setTranscriptionValue(event.target.value);
+    }
+    const handleChangeRussianValue = (event) => {
+        setRussianValue(event.target.value);
+    }
+
+
+
+
+
+    const handleChangeWord = () => {
+        isEditMode ? changeEditMode(false) : changeEditMode(true);
+    }
+
+
+
+
+    
     return (
         <div className="Word__item">
             <div className="Word__wrap">
                 <div className="Word__input-wrap">
                     {isEditMode ?
-                        <input defaultValue={english} type="text" className="form__input"/>
+                        <input value={englishValue} onChange={handleChangeEnglishValue} type="text" className="form__input"/>
                         :
-                        <span>{english}</span>
+                        <span>{englishValue}</span>
                     }
                 </div>
                 <div className="Word__input-wrap">
                     {isEditMode ?
-                        <input defaultValue={transcription} type="text" className="form__input"/>
+                        <input value={transcriptionValue} onChange={handleChangeTranscriptionValue} type="text" className="form__input"/>
                         :
-                        <span>{transcription}</span>
+                        <span>{transcriptionValue}</span>
                     }
                 </div>
                 <div className="Word__input-wrap">
                     {isEditMode ?
-                        <input defaultValue={russian} type="text" className="form__input"/>
+                        <input value={russianValue} onChange={handleChangeRussianValue} type="text" className="form__input"/>
                         :
-                        <span>{russian}</span>
+                        <span>{russianValue}</span>
                     }
                 </div>
             </div>
             <div className="Word__edit">
                 {isEditMode ?
                     <div className="Word__edit-items">
-                        <EditButton title="Save" svg="save"  />
-                        <EditButton title="Cancel" svg="cancel" onClick={onClickChangeModeBtn}/>
+                        <EditButton title="Save" svg="save" onClick={handleChangeWord}  />
+                        <EditButton title="Cancel" svg="cancel" onClick={handleChangeMode}/>
                     </div>
                     :
                     <div className="Word__edit-items">
-                        <EditButton title="Edit" svg="edit" onClick={onClickChangeModeBtn}/>
+                        <EditButton title="Edit" svg="edit" onClick={handleChangeMode}/>
                         <EditButton title="Delete" svg="delete"/>
                     </div>
                 }
