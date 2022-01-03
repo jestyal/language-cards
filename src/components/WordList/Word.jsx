@@ -7,12 +7,11 @@ function Word({english, transcription, russian}) {
 
     const handleChangeMode = () => {
         isEditMode ? changeEditMode(false) : changeEditMode(true);
+
     }
 
 
-
-
-
+    //редактируем слова
     const [englishValue, setEnglishValue] = useState(english);
     const [transcriptionValue, setTranscriptionValue] = useState(transcription);
     const [russianValue, setRussianValue] = useState(russian);
@@ -27,18 +26,16 @@ function Word({english, transcription, russian}) {
         setRussianValue(event.target.value);
     }
 
+    const handleSave = () => {
 
-
-
-
-    const handleChangeWord = () => {
+    }
+    const handleCancel = () => {
         isEditMode ? changeEditMode(false) : changeEditMode(true);
+        setEnglishValue(english);
+        setTranscriptionValue(transcription);
+        setRussianValue(russian);
     }
 
-
-
-
-    
     return (
         <div className="Word__item">
             <div className="Word__wrap">
@@ -67,8 +64,8 @@ function Word({english, transcription, russian}) {
             <div className="Word__edit">
                 {isEditMode ?
                     <div className="Word__edit-items">
-                        <EditButton title="Save" svg="save" onClick={handleChangeWord}  />
-                        <EditButton title="Cancel" svg="cancel" onClick={handleChangeMode}/>
+                        <EditButton title="Save" svg="save" onClick={handleChangeMode}  />
+                        <EditButton title="Cancel" svg="cancel" onClick={handleCancel}/>
                     </div>
                     :
                     <div className="Word__edit-items">
