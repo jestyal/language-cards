@@ -11,8 +11,7 @@ function Word({english, transcription, russian}) {
     }
 
 
-    const [newWord, setNewWord] = useState(
-        {
+    const [newWord, setNewWord] = useState({
             english: english,
             transcription: transcription,
             russian: russian
@@ -20,10 +19,10 @@ function Word({english, transcription, russian}) {
     );
 
     const handleChange = (event) => {
-        setNewWord(newWord => ({
+        setNewWord({
             ...newWord,
-            [event.target.id]: event.target.value
-        }));
+            [event.target.name]: event.target.value
+        });
     }
 
     return (
