@@ -18,8 +18,8 @@ function CardList() {
                     }
                 </div>
                 <div className="card__arrows">
-                    <Button title="Prev" arrow="arrowPrev" />
-                    <Button title="Next" arrow="arrowNext" />
+                    <Button />
+                    <Button />
                 </div>
                 <div className="card__counter">
                     1 / 10

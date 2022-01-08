@@ -71,8 +71,19 @@
   button {
     position: absolute;
     top: 0;
+    &:before {
+      content: "";
+      display: block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      background: url("../../assets/images/icons/arrow.svg");
+    }
     &:first-of-type {
       right: calc(50% + 200px);
+      &:before {
+        transform: rotate(180deg);
+      }
     }
     &:last-of-type {
       left: calc(50% + 200px);
