@@ -4,8 +4,7 @@ import "./Card.scss";
 import WORDS from "../Dictionary/Dictionary";
 import Button from "../Button/Button";
 
-function CardList(props) {
-    // const [counter, setCounter] = useState(props.number);
+function CardList() {
     const [counter, setCounter] = useState(0);
 
     const showPrevCard = () => {
@@ -24,11 +23,9 @@ function CardList(props) {
         }
     }
 
-
     return (
         <Fragment>
             <h2 className="title">Card list</h2>
-
             <div className="card__slider">
                 <div className="card__list">
                     {

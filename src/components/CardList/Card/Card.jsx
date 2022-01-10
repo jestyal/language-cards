@@ -1,7 +1,7 @@
 import {useState} from "react";
 import Button from "../../Button/Button";
 
-function Card({id, index, english, transcription, russian, counter}) {
+function Card({ index, english, transcription, russian, counter }) {
     const [isHidden, changeBtnVisibility] = useState(false);
 
     function showRussianWord() {
