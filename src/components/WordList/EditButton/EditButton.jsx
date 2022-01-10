@@ -22,7 +22,7 @@ class EditButton extends Component {
             buttonDesc = ""
         }
         return (
-            <button id={id} type="submit" className="Btn Btn_edit" onClick={onClick} style={isHidden && {"display": "none"}}>
+            <button id={id} type="submit" className="btn btn_edit" onClick={onClick} style={isHidden && {"display": "none"}}>
                 {title}
                 {buttonDesc}
             </button>

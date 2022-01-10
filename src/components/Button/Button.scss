@@ -1,6 +1,6 @@
 @use "../../assets/styles/variables";
 
-.Btn {
+.btn {
   display: block;
   width: fit-content;
   padding: 5px 10px;
@@ -10,6 +10,7 @@
   color: variables.$colorBlack;
   font-size: 18px;
   cursor: pointer;
+  transition: variables.$transitionTime;;
   &:hover {
     background-color: variables.$colorGreen;
     opacity: initial;

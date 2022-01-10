@@ -10,14 +10,14 @@
   display: grid;
   //grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px 20px;
+  height: 280px;
   margin-bottom: 20px;
   justify-items: center;
-  //transform: translate3d(-3360px, 0px, 0px);
-  //transition: all 0.25s ease 0s;
 }
 
 .card__item {
-  display: none;
+  display: grid;
+  position: absolute;
   height: 280px;
   max-width: 240px;
   width: 100%;
@@ -27,8 +27,13 @@
   background-color: variables.$colorLightGrey;
   text-align: center;
   z-index: 5;
-  &:first-of-type {
-    display: grid;
+  opacity: 0;
+  visibility: hidden;
+  transition: variables.$transitionTime;
+  &.js_active {
+    opacity: 1;
+    visibility: visible;
+    transform: variables.$transformRotate;
   }
 }
 
@@ -36,13 +41,16 @@
   margin-bottom: 5px;
   font-size: 25px;
   font-weight: bold;
+  transform: variables.$transformRotate;
 }
 .card__transcription {
   color: variables.$colorDarkGrey;
+  transform: variables.$transformRotate;
 }
 .card__btn-wrap {
   position: relative;
-  .Btn {
+  transform: variables.$transformRotate;
+  .btn {
     position: relative;
     width: 100%;
     margin: 0 auto;

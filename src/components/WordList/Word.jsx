@@ -24,6 +24,15 @@ function Word({english, transcription, russian}) {
         });
     }
 
+    const handleReset = (event) => {
+        setNewWord({
+            english: english,
+            transcription: transcription,
+            russian: russian
+        });
+        changeEditMode(false);
+    }
+
     return (
         <div className="Word__item">
             <div className="Word__wrap">
@@ -53,7 +62,7 @@ function Word({english, transcription, russian}) {
                 {isEditMode ?
                     <div className="Word__edit-items">
                         <EditButton title="Save" svg="save" onClick={handleChangeMode}  />
-                        <EditButton title="Cancel" svg="cancel" onClick={handleChangeMode}/>
+                        <EditButton title="Cancel" svg="cancel" onClick={handleReset}/>
                     </div>
                     :
                     <div className="Word__edit-items">

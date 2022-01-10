@@ -1,7 +1,7 @@
 import {useState} from "react";
 import Button from "../../Button/Button";
 
-function Card({english, transcription, russian}) {
+function Card({id, index, english, transcription, russian, counter}) {
     const [isHidden, changeBtnVisibility] = useState(false);
 
     function showRussianWord() {
@@ -9,7 +9,7 @@ function Card({english, transcription, russian}) {
     }
 
     return (
-        <div className="card__item">
+        <div className={`card__item` + ((counter === index) ? ` js_active` : ``)}>
             <div className="">
                 <div className="card__word">{english}</div>
                 <div className="card__transcription">{transcription}</div>

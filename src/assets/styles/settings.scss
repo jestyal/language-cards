@@ -43,6 +43,7 @@ body {
 a {
   color: variables.$colorBlack;
   text-decoration: none;
+  transition: variables.$transitionTime;
   &:hover {
     color: variables.$colorViolet;
     opacity: 0.8;
