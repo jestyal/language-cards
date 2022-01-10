@@ -17,12 +17,13 @@ function CardList(props) {
     }
 
     const showNextCard = () => {
-        if(counter === WORDS.length) {
-            setCounter(WORDS.length)
+        if((counter + 1) === WORDS.length) {
+            setCounter(WORDS.length - 1)
         } else {
             setCounter(counter + 1);
         }
     }
+
 
     return (
         <Fragment>
@@ -46,7 +47,7 @@ function CardList(props) {
                     <Button onClick={showNextCard} />
                 </div>
                 <div className="card__counter">
-                    { counter } / { WORDS.length }
+                    { counter + 1 } / { WORDS.length }
                 </div>
             </div>
         </Fragment>

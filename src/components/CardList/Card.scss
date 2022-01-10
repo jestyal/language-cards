@@ -79,6 +79,9 @@
   button {
     position: absolute;
     top: 0;
+    &.js_hidden {
+      display: none;
+    }
     &:before {
       content: "";
       display: block;
