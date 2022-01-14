@@ -4,31 +4,37 @@ import SearchForm from "../SearchForm/SearchForm";
 import NavLink from "../NavLink/NavLink";
 
 
-const navData = [{
-    title: "Log In",
-    link: "",
-},{
-    title: "Sign Up",
-    link: "",
-},];
+// const navData = [{
+//     title: "Log In",
+//     link: "",
+// },{
+//     title: "Sign Up",
+//     link: "",
+// },];
+
+const headerMenu = [{
+    title: 'Flashcards',
+    link: '/cards'
+}]
 
 
 function Header() {
     return (
-        <header className="Header">
-            <div className="wrapper Header__wrap">
+        <header className="header">
+            <div className="wrapper header__wrap">
                 <Logo isShow />
-                <SearchForm />
-                <div className="Nav__wrap">
-                    {
-                        navData.map((item, index) =>
-                            <NavLink key={index}
-                                     title={item.title}
-                                     link={item.link}
-                            />
-                        )
-                    }
-                </div>
+                {/*<SearchForm />*/}
+                <nav className="nav__wrap">
+                    {/*{*/}
+                    {/*    navData.map((item, index) =>*/}
+                    {/*        <NavLink key={index}*/}
+                    {/*                 title={item.title}*/}
+                    {/*                 link={item.link}*/}
+                    {/*        />*/}
+                    {/*    )*/}
+                    {/*}*/}
+
+                </nav>
             </div>
         </header>
     );

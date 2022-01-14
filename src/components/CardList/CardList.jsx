@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import Card from "./Card/Card";
 import "./Card.scss";
 import WORDS from "../Dictionary/Dictionary";
@@ -13,6 +13,7 @@ function CardList() {
         } else {
             setCounter(counter - 1);
         }
+
     }
 
     const showNextCard = () => {
@@ -24,8 +25,8 @@ function CardList() {
     }
 
     return (
-        <Fragment>
-            <h2 className="title">Card list</h2>
+        <main className="wrapper wrapper_full">
+            <h1 className="title title_max title_center mt_40 mb_40">Learning English by Flashcards</h1>
             <div className="card__slider">
                 <div className="card__list">
                     {
@@ -47,7 +48,7 @@ function CardList() {
                     { counter + 1 } / { WORDS.length }
                 </div>
             </div>
-        </Fragment>
+        </main>
     );
 }
 
