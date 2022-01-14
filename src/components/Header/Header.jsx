@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Header.scss";
+import "../NavLink/Nav.scss";
 import Logo from "../Logo/Logo";
 // import SearchForm from "../SearchForm/SearchForm";
 // import NavLink from "../NavLink/NavLink";
