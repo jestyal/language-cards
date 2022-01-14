@@ -13,7 +13,6 @@ function CardList() {
         } else {
             setCounter(counter - 1);
         }
-
     }
 
     const showNextCard = () => {
@@ -27,18 +26,11 @@ function CardList() {
     return (
         <main className="wrapper wrapper_full">
             <h1 className="title title_max title_center mt_40 mb_40">Learning English by Flashcards</h1>
+            <h2 className="title title_center mb_40">Flashcards Game</h2>
             <div className="card__slider">
                 <div className="card__list">
-                    {
-                        WORDS.map((item, index) =>
-                            <Card key={index}
-                                  id={item.id}
-                                  index={index}
-                                  counter={counter}
-                                  {...item}
-                            />
-                        )
-                    }
+                    {/*вместо map сразу рисовать карточку из массива WORDS по её индексу*/}
+                    <Card word={WORDS[counter]} counter={counter} />
                 </div>
                 <div className="card__arrows">
                     <Button onClick={showPrevCard} />

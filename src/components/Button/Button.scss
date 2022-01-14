@@ -10,7 +10,7 @@
   color: variables.$colorBlack;
   font-size: 18px;
   cursor: pointer;
-  transition: variables.$transitionTime;;
+  //transition: variables.$transitionTime;
   &:hover {
     background-color: variables.$colorGreen;
     opacity: initial;

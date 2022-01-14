@@ -1,9 +1,11 @@
 @use "../../assets/styles/variables";
+
 .card__slider {
   position: relative;
   overflow: hidden;
   margin-bottom: 60px;
 }
+
 .card__list {
   position: relative;
   overflow: hidden;
@@ -27,46 +29,71 @@
   background-color: variables.$colorLightGrey;
   text-align: center;
   z-index: 5;
-  opacity: 0;
-  visibility: hidden;
-  transition: variables.$transitionTime;
-  &.js_active {
-    opacity: 1;
-    visibility: visible;
-    transform: variables.$transformRotate;
+
+  //animation
+  animation-name: spin;
+  animation-duration: 200ms;
+  animation-iteration-count: 1;
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(-180deg);
+    }
+  }
+  & > * {
+    animation-name: spin-visibility;
+    animation-duration: 200ms;
+    animation-iteration-count: 1;
+    @keyframes spin-visibility {
+      0% {
+        transform: rotateY(0deg);
+        opacity: 0;
+      }
+      100% {
+        transform: rotateY(-180deg);
+        opacity: 1;
+      }
+    }
   }
 }
+
 
 .card__word {
   margin-bottom: 5px;
   font-size: 25px;
   font-weight: bold;
-  transform: variables.$transformRotate;
+  //transform: variables.$transformRotate;
 }
+
 .card__transcription {
   color: variables.$colorDarkGrey;
-  transform: variables.$transformRotate;
+  //transform: variables.$transformRotate;
 }
+
 .card__btn-wrap {
   position: relative;
-  transform: variables.$transformRotate;
+  //transform: variables.$transformRotate;
   .btn {
     position: relative;
     width: 100%;
     margin: 0 auto;
     z-index: 3;
+
     &.js_hidden {
       opacity: 0;
       z-index: -1;
     }
   }
 }
+
 .card__translation {
   display: block;
   position: absolute;
   width: 100%;
   top: 7px;
-  left:0;
+  left: 0;
   z-index: 0;
   text-align: center;
 }
@@ -76,12 +103,15 @@
   position: absolute;
   width: 100%;
   top: 120px;
+
   button {
     position: absolute;
     top: 0;
+
     &.js_hidden {
       display: none;
     }
+
     &:before {
       content: "";
       display: block;
@@ -90,12 +120,15 @@
       height: 24px;
       background: url("../../assets/images/icons/arrow.svg");
     }
+
     &:first-of-type {
       right: calc(50% + 200px);
+
       &:before {
         transform: rotate(180deg);
       }
     }
+
     &:last-of-type {
       left: calc(50% + 200px);
     }
