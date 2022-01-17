@@ -29,12 +29,11 @@ function CardList() {
             <h2 className="title title_center mb_40">Flashcards Game</h2>
             <div className="card__slider">
                 <div className="card__list">
-                    {/*вместо map сразу рисовать карточку из массива WORDS по её индексу*/}
-                    <Card word={WORDS[counter]} counter={counter} />
+                    <Card {...WORDS[counter]} counter={counter} />
                 </div>
                 <div className="card__arrows">
-                    <Button onClick={showPrevCard} />
-                    <Button onClick={showNextCard} />
+                    {counter > 0 && <Button onClick={showPrevCard} className={"arrows__prev"}/> }
+                    <Button onClick={showNextCard} className={"arrows__next"} />
                 </div>
                 <div className="card__counter">
                     { counter + 1 } / { WORDS.length }

@@ -121,7 +121,7 @@
       background: url("../../assets/images/icons/arrow.svg");
     }
 
-    &:first-of-type {
+    &.arrows__prev {
       right: calc(50% + 200px);
 
       &:before {
@@ -129,7 +129,7 @@
       }
     }
 
-    &:last-of-type {
+    &.arrows__next {
       left: calc(50% + 200px);
     }
   }
