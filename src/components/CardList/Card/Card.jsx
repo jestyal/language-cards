@@ -1,18 +1,25 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Button from "../../Button/Button";
 
-function Card({ english, transcription, russian, counter }) {
+function Card({ id, english, transcription, russian, counter }) {
     const [isHidden, changeBtnVisibility] = useState(false);
     const [last, changeLast] = useState(false);
 
     function showRussianWord() {
         changeBtnVisibility(true);
         changeLast(counter);
+        // setIsFront(!isFront);
     }
 
     if(last !== counter && isHidden) {
         changeBtnVisibility(false);
     }
+
+
+    // const [isFront, setIsFront] = useState(true);
+    // useEffect(() => {
+    //     setIsFront(true);
+    // }, [id]);
 
     return (
         <div className="card__item">
