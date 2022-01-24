@@ -7,7 +7,7 @@ export default function Logo({ isShow }) {
     return (
 
             <div className="Logo">
-                <Link to="/language-cards" className="Logo__link">
+                <Link to="/" className="Logo__link">
                     <LogoSvg />
                 </Link>
                 {isShow &&

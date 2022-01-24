@@ -4,7 +4,7 @@
   display: block;
   width: fit-content;
   padding: 5px 10px;
-  border: 0;
+  border: 2px solid transparent;
   border-radius: variables.$borderRadius;
   background-color: variables.$colorNeonBlue;
   color: variables.$colorBlack;
@@ -17,5 +17,6 @@
   }
   &:focus {
     outline: none;
+    border-color: variables.$colorViolet;
   }
 }

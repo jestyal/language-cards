@@ -10,7 +10,7 @@ function PageNotFound() {
                 <div className="mb_40">
                     <img src="https://i.gifer.com/3z9a.gif" alt="404"/>
                 </div>
-                <p className="title title_max">Please, return to <Link to="/language-cards">home page</Link></p>
+                <p className="title title_max">Please, return to <Link to="/">home page</Link></p>
             </div>
         </main>
     );

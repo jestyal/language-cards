@@ -1,11 +1,12 @@
-import {useState, useEffect} from "react";
-import Button from "../../Button/Button";
+import {useState, useEffect, forwardRef } from "react";
+import "../../Button/Button.scss";
 
-function Card({id, english, transcription, russian }) {
+const Card = forwardRef(function Card({id, english, transcription, russian, handleClickBtn, studiedWord }, ref) {
     const [isFront, setIsFront] = useState(true);
 
     function showRussianWord() {
         setIsFront(!isFront);
+        handleClickBtn();
     }
 
     useEffect(() => {
@@ -20,13 +21,15 @@ function Card({id, english, transcription, russian }) {
             </div>
             <div className="card__btn-wrap">
                 {isFront ?
-                    <Button title="Check Up" onClick={showRussianWord}/>
+                    <button className="btn" onClick={showRussianWord} ref={ref}>
+                        Check Up
+                    </button>
                     :
                     <div className="card__translation">{russian || "Russian"}</div>
                 }
             </div>
         </div>
     );
-}
+});
 
 export default Card;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../../assets/styles/forms.scss";
 import "./Word.scss";
 import EditButton from "./EditButton/EditButton";
 
@@ -24,7 +25,7 @@ function Word({english, transcription, russian}) {
         });
     }
 
-    const handleReset = (event) => {
+    const handleReset = () => {
         setNewWord({
             english: english,
             transcription: transcription,
