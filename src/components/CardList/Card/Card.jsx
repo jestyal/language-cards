@@ -16,8 +16,21 @@ function Card({id, english, transcription, russian, handleClickBtn }) {
     }, [id]);
 
 
-    const ref = useRef(null);
-    useEffect(() => ref.current.focus(), []);
+
+
+    const useFocus = () => {
+        const ref = useRef(null)
+        const setFocus = () => {ref.current && ref.current.focus()}
+
+        return [ ref, setFocus ]
+    }
+
+    const [btnRef, setBtnFocus] = useFocus();
+
+    useEffect(() => {
+        setBtnFocus();
+    });
+
 
 
     return (
@@ -28,7 +41,7 @@ function Card({id, english, transcription, russian, handleClickBtn }) {
             </div>
             <div className="card__btn-wrap">
                 {isFront ?
-                    <button className="btn btn_focused" onClick={showRussianWord} ref={ref}>
+                    <button className="btn btn_focused" onClick={showRussianWord} ref={btnRef}>
                         Check Up
                     </button>
                     :
