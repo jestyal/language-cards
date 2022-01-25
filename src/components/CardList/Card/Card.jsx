@@ -1,14 +1,12 @@
 import {useState, useEffect, useRef } from "react";
 import "../../Button/Button.scss";
 
-// const Card = forwardRef(
-
 function Card({id, english, transcription, russian, handleClickBtn }) {
     const [isFront, setIsFront] = useState(true);
 
     const showRussianWord = () => {
         setIsFront(!isFront);
-        handleClickBtn();
+        handleClickBtn(id);
     }
 
     useEffect(() => {
@@ -16,11 +14,9 @@ function Card({id, english, transcription, russian, handleClickBtn }) {
     }, [id]);
 
 
-
-
     const useFocus = () => {
-        const ref = useRef(null)
-        const setFocus = () => {ref.current && ref.current.focus()}
+        const ref = useRef(null);
+        const setFocus = () => {ref.current && ref.current.focus()};
 
         return [ ref, setFocus ]
     }
@@ -30,7 +26,6 @@ function Card({id, english, transcription, russian, handleClickBtn }) {
     useEffect(() => {
         setBtnFocus();
     });
-
 
 
     return (
