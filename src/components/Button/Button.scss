@@ -17,6 +17,10 @@
   }
   &:focus {
     outline: none;
-    border-color: variables.$colorViolet;
+  }
+  &.btn_focused {
+    &:focus {
+      border-color: variables.$colorViolet;
+    }
   }
 }

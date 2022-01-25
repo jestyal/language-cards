@@ -1,10 +1,12 @@
-import {useState, useEffect, forwardRef } from "react";
+import {useState, useEffect, useRef } from "react";
 import "../../Button/Button.scss";
 
-const Card = forwardRef(function Card({id, english, transcription, russian, handleClickBtn, studiedWord }, ref) {
+// const Card = forwardRef(
+
+function Card({id, english, transcription, russian, handleClickBtn }) {
     const [isFront, setIsFront] = useState(true);
 
-    function showRussianWord() {
+    const showRussianWord = () => {
         setIsFront(!isFront);
         handleClickBtn();
     }
@@ -12,6 +14,11 @@ const Card = forwardRef(function Card({id, english, transcription, russian, hand
     useEffect(() => {
         setIsFront(true);
     }, [id]);
+
+
+    const ref = useRef(null);
+    useEffect(() => ref.current.focus(), []);
+
 
     return (
         <div className="card__item">
@@ -21,7 +28,7 @@ const Card = forwardRef(function Card({id, english, transcription, russian, hand
             </div>
             <div className="card__btn-wrap">
                 {isFront ?
-                    <button className="btn" onClick={showRussianWord} ref={ref}>
+                    <button className="btn btn_focused" onClick={showRussianWord} ref={ref}>
                         Check Up
                     </button>
                     :
@@ -30,6 +37,8 @@ const Card = forwardRef(function Card({id, english, transcription, russian, hand
             </div>
         </div>
     );
-});
+}
+// );
+
 
 export default Card;
