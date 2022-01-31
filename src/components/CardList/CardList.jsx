@@ -16,7 +16,6 @@ function CardList() {
         setCounter(counter + 1);
     }
 
-
     const [studiedWords, setStudiedWords] = useState([]);
     const handleClickBtn = (id) => {
         if(!studiedWords.includes(id)) {
