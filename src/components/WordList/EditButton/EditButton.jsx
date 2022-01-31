@@ -7,7 +7,7 @@ import { ReactComponent as CancelIcon } from './icons/cancel-icon.svg';
 
 class EditButton extends Component {
     render() {
-        const {id, title, svg, onClick, isHidden} = this.props
+        const {id, title, svg, onClick, isHidden, isDisabled} = this.props
 
         let buttonDesc;
         if(svg === "delete") {
@@ -22,12 +22,13 @@ class EditButton extends Component {
             buttonDesc = ""
         }
         return (
-            <button id={id} type="submit" className="btn btn_edit" onClick={onClick} style={isHidden && {"display": "none"}}>
+            <button id={id} type="submit" className={'btn btn_edit' + (isDisabled ? ' btn_disabled' : '')} onClick={onClick} style={isHidden && {"display": "none"}}>
                 {title}
                 {buttonDesc}
             </button>
         );
     }
 }
+
 
 export default EditButton;

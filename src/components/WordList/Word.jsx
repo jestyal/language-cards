@@ -8,34 +8,59 @@ function Word({english, transcription, russian}) {
 
     const handleChangeMode = () => {
         isEditMode ? changeEditMode(false) : changeEditMode(true);
-    };
 
+    };
 
     const [newWord, setNewWord] = useState({
         english: english,
         transcription: transcription,
-        russian: russian
+        russian: russian,
     });
 
 
     const handleChange = (event) => {
 
-        validateInput(event.target.name, event.target.value);
+        //валидация
+        if (!event.target.value ) {
+            setIsDisabled(true);
+        }
+        setIsValid({
+            ...isValid,
+            [event.target.name]: event.target.value.length !== 0
+        });
+
+
 
         setNewWord({
             ...newWord,
             [event.target.name]: event.target.value
+            // [event.target.name]: event.target.value.length !== 0,
         });
+
+
+
     };
 
-    const handleReset = () => {
+    const handleReset = (event) => {
         setNewWord({
             english: english,
             transcription: transcription,
             russian: russian
         });
         changeEditMode(false);
+
+
+
+        setIsValid({
+            english: true,
+            transcription: true,
+            russian: true,
+        })
+        setIsDisabled(false);
+
     };
+
+
 
     //валидация для полей
     const [isValid, setIsValid] = useState({
@@ -44,12 +69,10 @@ function Word({english, transcription, russian}) {
         russian: true,
     });
 
-    function validateInput (inputName, inputValue) {
-        setIsValid({
-            ...isValid,
-            [inputName]: inputValue.length !== 0
-        });
-    }
+    //отключить кнопку
+    const [isDisabled, setIsDisabled] = useState(false);
+
+
 
     return (
         <div className="Word__item">
@@ -57,7 +80,9 @@ function Word({english, transcription, russian}) {
                 <div className="Word__input-wrap">
                     {isEditMode ?
                         <input value={newWord.english} onChange={handleChange} name="english" type="text"
-                               className={(isValid.english ? `form__input` : `form__input form__input_err`)} />
+                               className={(isValid.english ? `form__input` : `form__input form__input_err`)}
+                               // className="form__input"
+                        />
                         :
                         <span>{newWord.english}</span>
                     }
@@ -65,7 +90,9 @@ function Word({english, transcription, russian}) {
                 <div className="Word__input-wrap">
                     {isEditMode ?
                         <input value={newWord.transcription} onChange={handleChange} name="transcription" type="text"
-                               className={(isValid.transcription ? `form__input` : `form__input form__input_err`)} />
+                               className={(isValid.transcription ? `form__input` : `form__input form__input_err`)}
+                               // className="form__input"
+                        />
                         :
                         <span>{newWord.transcription}</span>
                     }
@@ -73,7 +100,9 @@ function Word({english, transcription, russian}) {
                 <div className="Word__input-wrap">
                     {isEditMode ?
                         <input value={newWord.russian} onChange={handleChange} name="russian" type="text"
-                               className={(isValid.russian ? `form__input` : `form__input form__input_err`)} />
+                               className={(isValid.russian ? `form__input` : `form__input form__input_err`)}
+                               // className="form__input"
+                        />
                         :
                         <span>{newWord.russian}</span>
                     }
@@ -82,7 +111,9 @@ function Word({english, transcription, russian}) {
             <div className="Word__edit">
                 {isEditMode ?
                     <div className="Word__edit-items">
-                        <EditButton title="Save" svg="save" onClick={handleChangeMode}/>
+                        <EditButton title="Save" svg="save" onClick={handleChangeMode}
+                                    isDisabled={isDisabled}
+                        />
                         <EditButton title="Cancel" svg="cancel" onClick={handleReset}/>
                     </div>
                     :
