@@ -21,3 +21,9 @@
   outline: 0;
   border-color: variables.$colorNeonBlue;
 }
+
+.form__error {
+  margin-top: 5px;
+  font-size: 14px;
+  color: variables.$colorDarkGrey;
+}

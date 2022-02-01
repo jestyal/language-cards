@@ -16,8 +16,8 @@
 }
 .btn_disabled {
   background-color: variables.$colorLightGrey;
-  cursor: default;
-  pointer-events: none;
+  //cursor: default;
+  //pointer-events: none;
   &:hover {
     background-color: variables.$colorLightGrey;
   }
