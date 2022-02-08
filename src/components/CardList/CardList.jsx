@@ -1,13 +1,13 @@
 import {useContext, useState} from "react";
 import Card from "./Card/Card";
 import "./Card.scss";
-import WORDS from "../Dictionary/Dictionary";
-import WordsContext from "../../contexts/Words";
+// import WORDS from "../Dictionary/Dictionary";
+import { WordsContext } from "../../contexts/Words";
 import Button from "../Button/Button";
 import Firework from "../Firework/Firework";
 
 function CardList() {
-    const words = useContext(WordsContext);
+    const WORDS = useContext(WordsContext);
 
     const [counter, setCounter] = useState(0);
 
@@ -17,9 +17,6 @@ function CardList() {
 
     const showNextCard = () => {
         setCounter(counter + 1);
-
-        console.log(WORDS);
-        console.log(words);
     }
 
     const [studiedWords, setStudiedWords] = useState([]);

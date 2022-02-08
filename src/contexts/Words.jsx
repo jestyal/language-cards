@@ -1,18 +1,17 @@
 import {createContext, useEffect, useState} from "react";
 
-export const WordsContext = createContext({});
+export const WordsContext = createContext([]);
 
 export default function WordsContextComponent(props) {
 
     //Создайте общий контекст приложения, в котором будет храниться коллекция всех слов
-    const [words, setWords] = useState([]);
+    const [WORDS, setWords] = useState([]);
 
     //Изначально индикатор закрузки выключен
     const [isLoading, setIsLoading] = useState(false);
 
     //отлов ошибок
     const [isError, setIsError] = useState(null)
-
 
     function getWordsFromBase() {
         fetch('/api/words')
@@ -52,10 +51,10 @@ export default function WordsContextComponent(props) {
         );
     }
 
-    console.log(words);
+
 
     return (
-        <WordsContext.Provider value={words}>
+        <WordsContext.Provider value={WORDS}>
             {props.children}
         </WordsContext.Provider>
     )
