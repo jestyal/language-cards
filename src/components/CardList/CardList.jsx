@@ -1,11 +1,14 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import Card from "./Card/Card";
 import "./Card.scss";
 import WORDS from "../Dictionary/Dictionary";
+import WordsContext from "../../contexts/Words";
 import Button from "../Button/Button";
 import Firework from "../Firework/Firework";
 
 function CardList() {
+    const words = useContext(WordsContext);
+
     const [counter, setCounter] = useState(0);
 
     const showPrevCard = () => {
@@ -14,6 +17,9 @@ function CardList() {
 
     const showNextCard = () => {
         setCounter(counter + 1);
+
+        console.log(WORDS);
+        console.log(words);
     }
 
     const [studiedWords, setStudiedWords] = useState([]);
@@ -38,6 +44,8 @@ function CardList() {
                 :
                 <div className="card__slider">
                     <div className="card__list">
+                        {/*<Card {...WORDS[counter]} handleClickBtn={handleClickBtn} />*/}
+
                         <Card {...WORDS[counter]} handleClickBtn={handleClickBtn} />
                     </div>
                     <div className="card__arrows">
