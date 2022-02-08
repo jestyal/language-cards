@@ -3,6 +3,12 @@
 .Word__list {
   margin-bottom: 60px;
 }
+.Word__list-title {
+  .btn {
+    font-weight: bold;
+    font-size: 17px;
+  }
+}
 .Word__list-head {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 200px;
@@ -28,6 +34,16 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
+}
+.Word__wrap_head {
+  padding: 10px 10px 5px;
+  margin-bottom: 30px;
+  background-color: variables.$colorViolet;
+  .Word__input-wrap {
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
 }
 .Word__input-wrap {
   position: relative;

@@ -2,25 +2,8 @@ import {useState} from "react";
 import "../../assets/styles/forms.scss";
 import "./Word.scss";
 import EditButton from "./EditButton/EditButton";
+import WordInput from "./WordInput";
 
-function WordInput({isEditMode, value, onChange, name, error }) {
-    return (
-        <div className="Word__input-wrap">
-            {isEditMode ?
-                <>
-                    <input value={value} onChange={onChange} name={name} type="text"
-                           className={(!error ? `form__input` : `form__input form__input_err`)}
-                    />
-                    <div className="form__error">
-                        {error}
-                    </div>
-                </>
-                :
-                <span>{value}</span>
-            }
-        </div>
-    )
-}
 
 function Word({english, transcription, russian}) {
     const [isEditMode, changeEditMode] = useState(false);

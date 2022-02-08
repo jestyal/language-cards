@@ -53,8 +53,17 @@ a {
   }
 }
 
+.mb_0 {
+  margin-bottom: 0;
+}
 .mb_10 {
   margin-bottom: 10px;
+}
+.mb_20 {
+  margin-bottom: 20px;
+}
+.mb_30 {
+  margin-bottom: 30px;
 }
 .mt_40 {
   margin-top: 40px;
@@ -65,4 +74,14 @@ a {
 
 .text_center {
   text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+.flex_justify {
+  justify-content: space-between;
+}
+.flex_align-center {
+  align-items: center;
 }
