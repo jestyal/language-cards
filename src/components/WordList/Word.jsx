@@ -4,7 +4,6 @@ import "./Word.scss";
 import EditButton from "./EditButton/EditButton";
 import WordInput from "./WordInput";
 
-
 function Word({english, transcription, russian}) {
     const [isEditMode, changeEditMode] = useState(false);
 

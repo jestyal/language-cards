@@ -35,16 +35,6 @@
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
 }
-.Word__wrap_head {
-  padding: 10px 10px 5px;
-  margin-bottom: 30px;
-  background-color: variables.$colorViolet;
-  .Word__input-wrap {
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
-}
 .Word__input-wrap {
   position: relative;
   margin-right: 20px;
@@ -72,4 +62,19 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+.Word__add {
+  border: 2px solid variables.$colorViolet;
+  .Word__edit-items {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    .btn {
+      width: 91px;
+      &:not(:last-of-type) {
+        margin-bottom: 5px;
+      }
+    }
+  }
 }

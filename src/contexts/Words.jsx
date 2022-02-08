@@ -44,16 +44,22 @@ export default function WordsContextComponent(props) {
     // Создайте методы для изменения, удаления и добавления слов. При сохранении изменений слова в таблице, отправьте изменения на сервер и обновите таблицу.
 
     const [isAddWord, setIsAddWord] = useState(false);
+    const [newAddWord, setNewWord] = useState({
+        english: "english",
+        transcription: "transcription",
+        russian: "russian",
+    })
 
     const addWord = () => {
         console.log("Added!!!!!!!!!!!!!!");
         setIsAddWord(!isAddWord);
     };
 
-
-
-    const changeWord = () => {
-
+    const changeWord = (event) => {
+        setNewWord({
+            ...newAddWord,
+            [event.target.name]: event.target.value
+        })
     };
 
     const deleteWord = () => {
@@ -75,7 +81,7 @@ export default function WordsContextComponent(props) {
     }
 
     return (
-        <WordsContext.Provider value={{WORDS, addWord, isAddWord}}>
+        <WordsContext.Provider value={{WORDS, addWord, isAddWord, changeWord, newAddWord}}>
             {props.children}
         </WordsContext.Provider>
     )
