@@ -1,23 +1,27 @@
-import {useState} from "react";
+import {useState, useContext} from "react";
 import "../../assets/styles/forms.scss";
 import "./Word.scss";
 import EditButton from "./EditButton/EditButton";
 import WordInput from "./WordInput";
+import {WordsContext} from "../../contexts/Words";
 
-function Word({english, transcription, russian}) {
-    const [isEditMode, changeEditMode] = useState(false);
+function Word({word, index}) {
+    const {english,transcription, russian, id} = word;
+    // console.log(word, english);
+    const {WORDS, addWord, isAddWord, changeWord, newAddWord, deleteWord, saveWord, cancelEditWord} = useContext(WordsContext);
+    const [isEditMode, changeEditMode] = useState(!id);
 
     const [newWord, setNewWord] = useState({
-        english: english,
-        transcription: transcription,
-        russian: russian,
+        english,
+        transcription,
+        russian,
     });
 
     //Errors
     const [error, setError] = useState({
-        english: "",
-        transcription: "",
-        russian: "",
+        english: !id ? "Field cannot be empty" : "",
+        transcription: !id ? "Field cannot be empty" : "",
+        russian: !id ? "Field cannot be empty" : "",
     });
 
     const isHaveError = () => Object.values(error).find(i => i !== "");
@@ -86,12 +90,12 @@ function Word({english, transcription, russian}) {
                         <EditButton title="Save" svg="save" onClick={handleSave}
                                     isDisabled={isHaveError()}
                         />
-                        <EditButton title="Cancel" svg="cancel" onClick={handleReset}/>
+                        {!id ? <EditButton title="Delete" svg="delete" onClick={() => deleteWord(id, index)} /> : <EditButton title="Cancel" svg="cancel" onClick={handleReset}/>}
                     </div>
                     :
                     <div className="Word__edit-items">
                         <EditButton title="Edit" svg="edit" onClick={handleEdit}/>
-                        <EditButton title="Delete" svg="delete"/>
+                        <EditButton title="Delete" svg="delete" onClick={() => deleteWord(id, index)}/>
                     </div>
                 }
             </div>

@@ -40,33 +40,57 @@ export default function WordsContextComponent(props) {
     }, []);
 
 
-
     // Создайте методы для изменения, удаления и добавления слов. При сохранении изменений слова в таблице, отправьте изменения на сервер и обновите таблицу.
 
-    const [isAddWord, setIsAddWord] = useState(false);
-    const [newAddWord, setNewWord] = useState({
-        english: "english",
-        transcription: "transcription",
-        russian: "russian",
-    })
+
 
     const addWord = () => {
-        console.log("Added!!!!!!!!!!!!!!");
-        setIsAddWord(!isAddWord);
+        setWords([
+            {
+                english: "",
+                transcription: "",
+                russian: "",
+            },
+            ...WORDS,
+        ]);
     };
 
-    const changeWord = (event) => {
-        setNewWord({
-            ...newAddWord,
-            [event.target.name]: event.target.value
-        })
+    // const changeWord = () => {
+    //     getWordsFromBase();
+    //
+    //
+    // };
+
+    const deleteWord = (id, index) => {
+        const newWords = [...WORDS];
+        newWords.splice(index, 1);
+
+        if (id) {
+            setIsLoading(true);
+            fetch(`/api/words/${id}/delete`, {method: 'POST'}).then(response => {
+                setIsLoading(false);
+                if (response.ok) {
+                    setWords(newWords);
+                } else {
+                    throw new Error('Something went wrong ...');
+                }
+            }).catch(error =>{
+                setIsError(error)
+                setIsLoading(false);
+            })
+        } else {
+            setWords(newWords);
+        }
     };
 
-    const deleteWord = () => {
 
-    };
+    const saveWord = () => {
+        getWordsFromBase();
+    }
 
+    const cancelEditWord = () => {
 
+    }
 
 
     if (isError) {
@@ -81,7 +105,8 @@ export default function WordsContextComponent(props) {
     }
 
     return (
-        <WordsContext.Provider value={{WORDS, addWord, isAddWord, changeWord, newAddWord}}>
+        <WordsContext.Provider
+            value={{WORDS, addWord, deleteWord, saveWord, cancelEditWord}}>
             {props.children}
         </WordsContext.Provider>
     )
