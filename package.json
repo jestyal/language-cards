@@ -1,7 +1,7 @@
 {
   "name": "language-cards",
   "homepage": "https://jestyal.github.io/language-cards",
-  "proxy": "https://itgirlschool.justmakeit.ru",
+  "proxy": "http://itgirlschool.justmakeit.ru",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

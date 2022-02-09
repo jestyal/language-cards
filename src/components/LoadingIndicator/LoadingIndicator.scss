@@ -1,0 +1,29 @@
+@use "../../assets/styles/variables";
+
+.loading-indicator__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 40;
+  background-color: #fff;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-indicator {
+  display: inline-block;
+  border: 18px solid variables.$colorLightGrey;
+  border-left-color: variables.$colorViolet;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  animation: spin 1.2s linear infinite;
+}
