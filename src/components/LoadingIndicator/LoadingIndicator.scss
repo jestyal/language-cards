@@ -2,6 +2,7 @@
 
 .loading-indicator__wrap {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
@@ -18,10 +19,11 @@
     transform: rotate(360deg);
   }
 }
+
 .loading-indicator {
   display: inline-block;
   border: 18px solid variables.$colorLightGrey;
-  border-left-color: variables.$colorViolet;
+  border-color: variables.$colorViolet variables.$colorPink variables.$colorNeonBlue variables.$colorGreen;
   border-radius: 50%;
   width: 150px;
   height: 150px;
