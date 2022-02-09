@@ -7,7 +7,7 @@ import Button from "../Button/Button";
 import Firework from "../Firework/Firework";
 
 function CardList() {
-    const WORDS = useContext(WordsContext);
+    const {WORDS} = useContext(WordsContext);
 
     const [counter, setCounter] = useState(0);
 
