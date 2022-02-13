@@ -84,6 +84,10 @@ export default function WordsContextComponent(props) {
 
         fetch(url, {
             method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(word),
         }).then(response => {
             setIsLoading(false);

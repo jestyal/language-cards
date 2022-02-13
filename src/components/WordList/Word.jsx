@@ -59,10 +59,6 @@ function Word({word, index}) {
         if (isHaveError()) return;
         changeEditMode(false);
         saveWord(index, newWord);
-        // console.log(
-        //     `Word: ` + newWord.english + ` Transcription: ` + newWord.transcription + ` Russian: ` + newWord.russian
-        // );
-
     }
 
     //Cancel btn
