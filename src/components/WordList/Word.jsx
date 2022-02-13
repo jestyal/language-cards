@@ -1,4 +1,4 @@
-import {useState, useContext} from "react";
+import {useState, useContext, useEffect} from "react";
 import "../../assets/styles/forms.scss";
 import "./Word.scss";
 import EditButton from "./EditButton/EditButton";
@@ -7,15 +7,14 @@ import {WordsContext} from "../../contexts/Words";
 
 function Word({word, index}) {
     const {english,transcription, russian, id} = word;
-    // console.log(word, english);
-    const {WORDS, addWord, isAddWord, changeWord, newAddWord, deleteWord, saveWord, cancelEditWord} = useContext(WordsContext);
+    const { deleteWord, saveWord } = useContext(WordsContext);
     const [isEditMode, changeEditMode] = useState(!id);
 
-    const [newWord, setNewWord] = useState({
-        english,
-        transcription,
-        russian,
-    });
+    const [newWord, setNewWord] = useState({...word});
+
+    useEffect(() => {
+        setNewWord({...word});
+    }, [word]);
 
     //Errors
     const [error, setError] = useState({
@@ -58,20 +57,20 @@ function Word({word, index}) {
     //Save btn
     const handleSave = () => {
         if (isHaveError()) return;
-
         changeEditMode(false);
+        saveWord(index, newWord);
+        // console.log(
+        //     `Word: ` + newWord.english + ` Transcription: ` + newWord.transcription + ` Russian: ` + newWord.russian
+        // );
 
-        console.log(
-            `Word: ` + newWord.english + ` Transcription: ` + newWord.transcription + ` Russian: ` + newWord.russian
-        );
     }
 
     //Cancel btn
     const handleReset = () => {
         setNewWord({
-            english: english,
-            transcription: transcription,
-            russian: russian
+            english,
+            transcription,
+            russian
         });
         changeEditMode(false);
         resetChanges();

@@ -1,4 +1,5 @@
 import {createContext, useEffect, useState} from "react";
+import LoadingIndicator from "../components/LoadingIndicator/LoadingIndicator";
 
 export const WordsContext = createContext([]);
 
@@ -41,9 +42,6 @@ export default function WordsContextComponent(props) {
 
 
     // Создайте методы для изменения, удаления и добавления слов. При сохранении изменений слова в таблице, отправьте изменения на сервер и обновите таблицу.
-
-
-
     const addWord = () => {
         setWords([
             {
@@ -55,43 +53,55 @@ export default function WordsContextComponent(props) {
         ]);
     };
 
-    // const changeWord = () => {
-    //     getWordsFromBase();
-    //
-    //
-    // };
-
     const deleteWord = (id, index) => {
         const newWords = [...WORDS];
         newWords.splice(index, 1);
 
         if (id) {
             setIsLoading(true);
-            fetch(`/api/words/${id}/delete`, {method: 'POST'}).then(response => {
-                setIsLoading(false);
-                if (response.ok) {
-                    setWords(newWords);
-                } else {
-                    throw new Error('Something went wrong ...');
-                }
-            }).catch(error =>{
-                setIsError(error)
-                setIsLoading(false);
-            })
+            fetch(`/api/words/${id}/delete`, {method: 'POST'})
+                .then(response => {
+                    setIsLoading(false);
+                    if (response.ok) {
+                        setWords(newWords);
+                    } else {
+                        throw new Error('Something went wrong ...');
+                    }
+                })
+                .catch(error => {
+                    setIsError(error)
+                    setIsLoading(false);
+                })
         } else {
             setWords(newWords);
         }
     };
 
 
-    const saveWord = () => {
-        getWordsFromBase();
-    }
+    const saveWord = (index, word) => {
+        setIsLoading(true);
+        const url = word.id ? `/api/words/${word.id}/update` : `/api/words/add`;
 
-    const cancelEditWord = () => {
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(word),
+        }).then(response => {
+            setIsLoading(false);
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Something went wrong ...');
+            }
+        }).then(response => {
+            const newArr = [...WORDS];
+            newArr[index] = response;
+            setWords(newArr);
+        }).catch(error => {
+            setIsError(error)
+            setIsLoading(false);
+        });
 
-    }
-
+    };
 
     if (isError) {
         return (
@@ -100,13 +110,13 @@ export default function WordsContextComponent(props) {
     }
     if (isLoading) {
         return (
-            <div>Loading ...</div>
+            <LoadingIndicator/>
         );
     }
 
     return (
         <WordsContext.Provider
-            value={{WORDS, addWord, deleteWord, saveWord, cancelEditWord}}>
+            value={{WORDS, addWord, deleteWord, saveWord}}>
             {props.children}
         </WordsContext.Provider>
     )

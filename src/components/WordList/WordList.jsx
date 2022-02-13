@@ -4,7 +4,6 @@ import "./Word.scss";
 // import WORDS from "../Dictionary/Dictionary";
 import {WordsContext} from "../../contexts/Words";
 import EditButton from "./EditButton/EditButton";
-import WordInput from "./WordInput";
 
 
 function WordList() {
