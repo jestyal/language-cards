@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/language-cards/static/css/main.ae15c8ab.chunk.css",
-    "main.js": "/language-cards/static/js/main.c56f0827.chunk.js",
-    "main.js.map": "/language-cards/static/js/main.c56f0827.chunk.js.map",
+    "main.css": "/language-cards/static/css/main.ba917e49.chunk.css",
+    "main.js": "/language-cards/static/js/main.e4a59ffd.chunk.js",
+    "main.js.map": "/language-cards/static/js/main.e4a59ffd.chunk.js.map",
     "runtime-main.js": "/language-cards/static/js/runtime-main.4f7c1d18.js",
     "runtime-main.js.map": "/language-cards/static/js/runtime-main.4f7c1d18.js.map",
     "static/js/2.c22c645e.chunk.js": "/language-cards/static/js/2.c22c645e.chunk.js",
     "static/js/2.c22c645e.chunk.js.map": "/language-cards/static/js/2.c22c645e.chunk.js.map",
     "index.html": "/language-cards/index.html",
-    "static/css/main.ae15c8ab.chunk.css.map": "/language-cards/static/css/main.ae15c8ab.chunk.css.map",
+    "static/css/main.ba917e49.chunk.css.map": "/language-cards/static/css/main.ba917e49.chunk.css.map",
     "static/js/2.c22c645e.chunk.js.LICENSE.txt": "/language-cards/static/js/2.c22c645e.chunk.js.LICENSE.txt",
     "static/media/Card.scss": "/language-cards/static/media/arrow.a1115d7c.svg",
     "static/media/cancel-icon.15101a14.svg": "/language-cards/static/media/cancel-icon.15101a14.svg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.4f7c1d18.js",
     "static/js/2.c22c645e.chunk.js",
-    "static/css/main.ae15c8ab.chunk.css",
-    "static/js/main.c56f0827.chunk.js"
+    "static/css/main.ba917e49.chunk.css",
+    "static/js/main.e4a59ffd.chunk.js"
   ]
 }
