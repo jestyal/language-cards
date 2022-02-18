@@ -15,7 +15,7 @@ export default function WordsContextComponent(props) {
     const [isError, setIsError] = useState(null)
 
     function getWordsFromBase() {
-        fetch('/api/words')
+        fetch('http://itgirlschool.justmakeit.ru/api/words')
             .then(response => {
                 if (response.ok) { //Проверяем что код ответа 200
                     return response.json();
@@ -59,7 +59,7 @@ export default function WordsContextComponent(props) {
 
         if (id) {
             setIsLoading(true);
-            fetch(`/api/words/${id}/delete`, {method: 'POST'})
+            fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {method: 'POST'})
                 .then(response => {
                     setIsLoading(false);
                     if (response.ok) {
@@ -80,7 +80,7 @@ export default function WordsContextComponent(props) {
 
     const saveWord = (index, word) => {
         setIsLoading(true);
-        const url = word.id ? `/api/words/${word.id}/update` : `/api/words/add`;
+        const url = word.id ? `http://itgirlschool.justmakeit.ru/api/words/${word.id}/update` : `/api/words/add`;
 
         fetch(url, {
             method: 'POST',
